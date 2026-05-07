@@ -237,12 +237,36 @@ async function viewProfile(row) {
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 20px;
-  transition: all 0.15s ease;
+  transition: all 0.25s ease;
+  animation: userCardFadeIn 0.4s ease-out backwards;
+}
+
+.users-grid .user-card:nth-child(1) { animation-delay: 0.05s; }
+.users-grid .user-card:nth-child(2) { animation-delay: 0.1s; }
+.users-grid .user-card:nth-child(3) { animation-delay: 0.15s; }
+.users-grid .user-card:nth-child(4) { animation-delay: 0.2s; }
+.users-grid .user-card:nth-child(5) { animation-delay: 0.25s; }
+.users-grid .user-card:nth-child(6) { animation-delay: 0.3s; }
+
+@keyframes userCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .user-card:hover {
   border-color: var(--accent-blue);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.user-card:hover .user-avatar {
+  transform: scale(1.1);
 }
 
 .user-header {
@@ -263,6 +287,7 @@ async function viewProfile(row) {
   color: white;
   font-size: 18px;
   font-weight: 600;
+  transition: transform 0.25s ease;
 }
 
 .user-info {

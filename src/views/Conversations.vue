@@ -250,11 +250,16 @@ loadHistory()
 .conversation-item {
   padding: 20px;
   border-bottom: 1px solid var(--border-color);
-  transition: background 0.15s ease;
+  transition: all 0.2s ease;
 }
 
 .conversation-item:hover {
   background: var(--bg-tertiary);
+}
+
+.conversation-item:hover .user-avatar {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .conversation-item:last-child {
@@ -288,6 +293,7 @@ loadHistory()
   color: white;
   font-size: 14px;
   font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .user-details {
